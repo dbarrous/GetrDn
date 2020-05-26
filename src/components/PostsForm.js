@@ -10,7 +10,7 @@ const PostsForm = ({ createPost }) => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          createPost(state);
+          createPost([state]);
           setState({ title: "", body: "" });
         }}
       >
