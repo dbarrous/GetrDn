@@ -1,13 +1,13 @@
 import React from "react";
-import PostsContainer from "../containers/PostsContainer";
-import PostsFormContainer from "../containers/PostsFormContainer";
+import TodoFormContainer from "../containers/TodoFormContainer";
+import TodoContainer from "../containers/TodoContainer";
 const App = () => {
   return (
     <div>
-      <h1>These are the retrieved posts:</h1>
-      <PostsFormContainer />
+      <h1>Todos:</h1>
       <hr />
-      <PostsContainer />
+      <TodoFormContainer />
+      <TodoContainer />
     </div>
   );
 };

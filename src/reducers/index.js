@@ -1,4 +1,4 @@
 import { combineReducers } from "redux";
-import postReducer from "./postReducer.js";
+import todoReducer from "./todoReducer.js";
 
-export default combineReducers({ posts: postReducer });
+export default combineReducers({ todo: todoReducer });

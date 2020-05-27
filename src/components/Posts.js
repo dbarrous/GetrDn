@@ -4,8 +4,10 @@ import PropTypes from "prop-types";
 const Posts = ({ posts, fetchPosts, newPost }) => {
   //Fetch Posts and add to State via  Redux
   useEffect(() => {
-    fetchPosts();
-  }, [fetchPosts]);
+    if (posts === undefined || posts.length === 0) {
+      fetchPosts();
+    }
+  }, []);
 
   //Rendering
   return (

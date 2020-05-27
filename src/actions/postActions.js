@@ -8,18 +8,9 @@ const fetchPosts = () => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-const createPost = (postData) => (dispatch) => {
+const createPost = (post) => {
   console.log("Creating Post - Action");
-  fetch("http://jsonplaceholder.typicode.com/posts", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(postData),
-  })
-    .then((res) => res.json())
-    .then((post) => dispatch({ type: NEW_POSTS, payload: post }))
-    .catch((err) => console.log(err));
+  return { type: NEW_POSTS, payload: post };
 };
 
 export { fetchPosts, createPost };
