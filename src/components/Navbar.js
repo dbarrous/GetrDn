@@ -7,7 +7,7 @@ const NavWrapper = styled.nav`
   width: 100vw;
   background: #5271ff;
   color: white;
-  height: 5vh;
+  height: 10vh;
 `;
 
 const StyledUl = styled.ul`
@@ -31,7 +31,7 @@ const StyledLink = styled(NavLink)`
   color: white;
   text-decoration: none;
   font-family: sans-serif;
-  font-size: 2rem;
+  font-size: 1.2rem;
 `;
 const Navbar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
