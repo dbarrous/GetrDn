@@ -2,8 +2,8 @@ language: node_js
 node_js:
   - "node"
 env:
-  REACT_APP_DOMAIN: $DOMAIN
-  REACT_APP_CLIENTID: $CLIENTID
+  REACT_APP_DOMAIN: $REACT_APP_DOMAIN
+  REACT_APP_CLIENTID: $REACT_APP_CLIENTID
 
 before_deploy:
   - npm install -g travis-ci-cloudfront-invalidation
