@@ -31,6 +31,7 @@ const StyledLink = styled(NavLink)`
   color: white;
   text-decoration: none;
   font-family: sans-serif;
+  font-size: 2rem;
 `;
 const Navbar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
