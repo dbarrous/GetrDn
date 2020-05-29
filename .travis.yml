@@ -1,18 +1,27 @@
-language: python
-python:
-  - "3.5"
-cache: pip
-install:
-  # Install any dependencies required for building your site here.
-  # `awscli` is required for invalidation of CloudFront distributions.
-  - pip install awscli
+matrix:
+  include:
+    - language: python
+      python:
+        - "3.5"
+      cache: pip
+
+      install:
+        # Install any dependencies required for building your site here.
+        # `awscli` is required for invalidation of CloudFront distributions.
+        - pip install awscli
+      after_deploy:
+        - aws configure set preview.cloudfront true
+        # Invalidate every object in the targeted distribution.
+        - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths "/*"
+
+    - language: node_js
+      before_deploy:
+        - npm run build
 
 env:
   REACT_APP_DOMAIN: $REACT_APP_DOMAIN
   REACT_APP_CLIENTID: $REACT_APP_CLIENTID
 
-before_deploy:
-  - npm run build
 deploy:
   provider: s3
   access_key_id: $AWS_ACCESS_KEY_ID
@@ -22,7 +31,3 @@ deploy:
   local-dir: build
   on:
     branch: master
-after_deploy:
-  - aws configure set preview.cloudfront true
-  # Invalidate every object in the targeted distribution.
-  - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths "/*"
