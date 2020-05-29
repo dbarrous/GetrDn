@@ -11,7 +11,7 @@ const Home = () => {
 
   return (
     <div>
-      {!user && <h1>Welcome Home COOL DUDE!</h1>}
+      {!user && <h1>Welcome Home!</h1>}
       {user && <h1>Welcome Back {user.name}!</h1>}
     </div>
   );
