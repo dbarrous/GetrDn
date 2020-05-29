@@ -1,3 +1,12 @@
+language: python
+python:
+  - "3.5"
+cache: pip
+install:
+  # Install any dependencies required for building your site here.
+  # `awscli` is required for invalidation of CloudFront distributions.
+  - pip install awscli
+
 language: node_js
 node_js:
   - "node"
@@ -6,7 +15,6 @@ env:
   REACT_APP_CLIENTID: $REACT_APP_CLIENTID
 
 before_deploy:
-  - pip install awscli
   - npm run build
 deploy:
   provider: s3
