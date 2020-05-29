@@ -20,7 +20,7 @@ const StyledUl = styled.ul`
 `;
 
 const StyledLi = styled.li`
-  width: 75px;
+  width: 100px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -31,7 +31,7 @@ const StyledLink = styled(NavLink)`
   color: white;
   text-decoration: none;
   font-family: sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 `;
 const Navbar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
