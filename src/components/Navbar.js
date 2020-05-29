@@ -5,7 +5,7 @@ import { useAuth0 } from "../react-auth0-spa";
 
 const NavWrapper = styled.nav`
   width: 100vw;
-  background: lightgray;
+  background: #5271ff;
   color: white;
   height: 5vh;
 `;
